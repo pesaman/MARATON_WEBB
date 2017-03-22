@@ -4,9 +4,12 @@
     <div>ººººººººººººººººººººººººººº ELIGE UNA CATEGORIA ººººººººººººººººººººººººººº</div>
     <hr/>
     <ul>
-    <li> <a href="/registrar" ><button id="sesion" type="button">History</button></a> </li>
-    <li> <a href="/registrar" ><button id="sesion" type="button">Geography</button></a> </li>
-    <li> <a href="/registrar" ><button id="sesion" type="button">Football</button></a> </li>
-    <li> <a href="/registrar" ><button id="sesion" type="button">Salir</button></a> </li>
+    <% @decks.each do |deck|%>
+    <% deck.id %>
+    <li> <a href="/show_deck/<%= deck.id %>" ><%= deck.name %></a> </li>
+   
+    <%end%>
     </ul>
     </div>
+
+  

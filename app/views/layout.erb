@@ -17,8 +17,45 @@
   <title></title>
 </head>
 <body>
-  <div class="container">
-    <%= yield %>
+   
+  <div class="warning">
+    <% if session[:error] %>
+      <p><%= session[:error] %></p>
+      <% session[:error].clear %>
+    <% end %>
   </div>
+   
+  <div class="warning">
+    <% if session[:incorrect_login] %>
+      <p><%= session[:incorrect_login] %></p>
+      <% session[:incorrect_login].clear %>
+    <% end %>
+  </div>
+
+  <div class="warning">
+    <% if session[:incorrect_user] %>
+      <p><%= session[:incorrect_user] %></p>
+      <% session[:incorrect_user].clear %>
+    <% end %>
+  </div>
+
+ <div class="correct">
+    <% if session[:logout] %>
+      <p><%= session[:logout] %></p>
+      <% session[:logout].clear %>
+    <% end %>
+  </div>
+
+  <div class="correct">
+    <% if session[:correct_user] %>
+      <p><%= session[:correct_user] %></p>
+      <% session[:correct_user].clear %>
+    <% end %>
+  </div>
+
+  <div class="container">
+      <%= yield %>
+  </div>
+
 </body>
 </html>

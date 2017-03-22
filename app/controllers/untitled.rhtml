@@ -1,0 +1,13 @@
+<h1><%= @deck.name %></h1>
+<form action="/result" method="post">
+<% @deck_questions.each_with_index do |question, index|%>
+  <h3><%= question.question %><br></h3>
+  <fieldset>
+    <% question.options.each do |option|%>
+     <input type="radio" name='[options<%= index %>][<% option.answer%>]' value="<%= option.answer%>"> <%= option.option %><br>
+            
+    <%end%>
+  </fieldset>
+<%end%>
+<input type="submit" value="enviar"> 
+</form>
